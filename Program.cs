@@ -4,6 +4,6 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        expendedora miexpendedora = new expendedora();
+        expendedora miexpendedora = new expendedora(true);
     }
 }

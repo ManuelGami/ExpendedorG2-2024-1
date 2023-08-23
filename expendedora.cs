@@ -63,6 +63,11 @@ namespace ExpendedorG2_2024_1
             limpiar();
             MostrarPrecio(codigo);
         }
+        public expendedora(bool mantenimiento) // puedo tener mas de un constructor con el mismo nombre pero que tenga parametros diferenetes
+        {
+            if (mantenimiento=true)
+                Console.WriteLine("entrando a modo mantenimiento");
+        }
         #endregion
     }
 
