@@ -9,7 +9,21 @@ namespace ExpendedorG2_2024_1
         //los atributos siempre la maquina le asigna un valor por dfault
         private string marca;
         private ushort cantproductos;
+        private byte temperatura; //limites del parametro, o encapsulamiento es en acciones rapidas y encapsular campo y usar propiedad
         private float precio;
+
+        public byte Temperatura 
+        { 
+            get => temperatura; // parametro a encapsular
+            set //limite que puede tomar
+            {
+                if (0 < value && value < 25)
+                    temperatura = value;
+                else
+                    temperatura = 20;
+
+            }
+        }
 
         #endregion
         #region metodos
@@ -65,8 +79,18 @@ namespace ExpendedorG2_2024_1
         }
         public expendedora(bool mantenimiento) // puedo tener mas de un constructor con el mismo nombre pero que tenga parametros diferenetes
         {
+            Temperatura = 20;
             if (mantenimiento=true)
                 Console.WriteLine("entrando a modo mantenimiento");
+            limpiar();
+            Console.WriteLine("cambiando temperatura");
+            limpiar();
+            for (int i=0; i < 20; i++)
+            {
+               Temperatura++;
+            }
+            Console.WriteLine("mostrando temperatura: "+ Temperatura);
+            
         }
         #endregion
     }
